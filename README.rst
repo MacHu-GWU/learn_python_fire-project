@@ -53,6 +53,8 @@ Welcome to ``learn_python_fire`` Documentation
 
 Method 1. Python File as CLI
 ------------------------------------------------------------------------------
+`app.py <https://github.com/MacHu-GWU/learn_python_fire-project/blob/main/app.py>`_
+
 .. code-block:: bash
 
     $ python app.py
@@ -61,20 +63,25 @@ Method 1. Python File as CLI
 
 Method 2. Python Package as CLI
 ------------------------------------------------------------------------------
+First, put business logic implementation in a separate module `learn_python_fire/app1_impl.py <https://github.com/MacHu-GWU/learn_python_fire-project/blob/main/learn_python_fire/app1_impl.py>`_
 
+Then, create a new Python file that use absolute import to import the python package, and put `fire.Fire` on top of the business logic implementation, like this `learn_python_fire/app1.py </Users/sanhehu/Documents/GitHub/learn_python_fire-project/learn_python_fire/app1.py>`_.
 
-.. code-block:: bash
+At the end, register the `learn_python_fire.app1:main` function in `pyproject.toml <https://github.com/MacHu-GWU/learn_python_fire-project/blob/main/pyproject.toml#L109>`_.
 
-    lpf1
-
-
-.. code-block:: bash
-
-    python learn_python_fire/app1.py
+Then you can use ``lpf1`` as a command line interface (CLI).
 
 .. code-block:: bash
 
-    python learn_python_fire/app1.py
+    $ lpf1
+    Hello World!
+
+Or you can run it directly with Python for local testing.
+
+.. code-block:: bash
+
+    $ python learn_python_fire/app1.py
+    Hello World!
 
 
 .. _install:
